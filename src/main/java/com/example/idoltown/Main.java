@@ -124,7 +124,7 @@ class Ranking {
 }
 
 interface Repo extends JpaRepository<Ranking, Long> {
-    @Query("select r from Ranking r order by r.point")
+    @Query("select r from Ranking r order by r.point desc ")
     Optional<List<Ranking>> findAllByImgUrlOrderByPoint();
 
     Optional<Ranking> findByName(String name);
